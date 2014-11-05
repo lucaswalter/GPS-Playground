@@ -1,34 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Threading;
-using GMap.NET;
+﻿using GMap.NET;
+using GMap.NET.MapProviders;
 using GMap.NET.WindowsPresentation;
-using System.Net;
+using GPS_Playground.Source;
+using System;
 using System.Net.NetworkInformation;
 using System.Text;
-using GMap.NET.MapProviders;
-using GPS_Playground.Source;
+using System.Windows;
 
 namespace GPS_Playground
 {
     public partial class MainWindow : Window
     {
-        // Points
-        PointLatLng start;
-        PointLatLng end;
-
         // Marker
         GMapMarker currentMarker;
 
@@ -46,7 +28,6 @@ namespace GPS_Playground
             // Basic Map Config
             MainMap.MapProvider = GMapProviders.OpenStreetMap;
             MainMap.Position = new PointLatLng(37.948544, -91.7715303);
-
 
             // Set Marker
             currentMarker = new GMapMarker(MainMap.Position);

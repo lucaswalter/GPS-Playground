@@ -13,5 +13,6 @@ namespace GPS_Playground
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

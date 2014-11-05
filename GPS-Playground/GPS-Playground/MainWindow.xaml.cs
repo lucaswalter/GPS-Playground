@@ -19,6 +19,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 using GMap.NET.MapProviders;
+using GPS_Playground.Source;
 
 namespace GPS_Playground
 {
@@ -44,10 +45,17 @@ namespace GPS_Playground
 
             // Basic Map Config
             MainMap.MapProvider = GMapProviders.OpenStreetMap;
-            MainMap.Position = new PointLatLng(54.6961334816182, 25.2985095977783);
+            MainMap.Position = new PointLatLng(37.948544, -91.7715303);
 
-            
 
+            // Set Marker
+            currentMarker = new GMapMarker(MainMap.Position);
+            {
+                currentMarker.Shape = new CustomMarkerRed(this, currentMarker, "Baller Rolla Marker");
+                currentMarker.Offset = new System.Windows.Point(-15, -15);
+                currentMarker.ZIndex = int.MaxValue;
+                MainMap.Markers.Add(currentMarker);
+            }
         }
 
         // TODO: DOES NOT BELONG HERE

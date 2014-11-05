@@ -18,11 +18,19 @@ using GMap.NET.WindowsPresentation;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
+using GMap.NET.MapProviders;
 
 namespace GPS_Playground
 {
     public partial class MainWindow : Window
     {
+        // Points
+        PointLatLng start;
+        PointLatLng end;
+
+        // Marker
+        GMapMarker currentMarker;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,9 +42,13 @@ namespace GPS_Playground
                 MessageBox.Show("No internet connection available, going to CacheOnly mode.", "GMap.NET - Demo.WindowsPresentation", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
+            // Basic Map Config
+            MainMap.MapProvider = GMapProviders.OpenStreetMap;
+            MainMap.Position = new PointLatLng(54.6961334816182, 25.2985095977783);
+
+            
 
         }
-
 
         // TODO: DOES NOT BELONG HERE
         public static bool PingNetwork(string hostNameOrAddress)

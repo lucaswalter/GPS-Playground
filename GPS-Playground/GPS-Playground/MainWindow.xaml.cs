@@ -62,5 +62,15 @@ namespace GPS_Playground
 
             return pingStatus;
         }
+
+        private void ImportBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainMap.ShowImportDialog();
+        }
+
+        private void ExportBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainMap.ShowExportDialog();
+        }
     }
 }

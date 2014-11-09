@@ -11,8 +11,8 @@
             <Grid>
                 <Button x:Name="ImportBtn" Margin="5,10,10,0" Height="55" VerticalAlignment="Top" Click="ImportBtn_Click" Content="Import"/>
                 <Button x:Name="ExportBtn" Margin="5,70,10,0" Height="55" VerticalAlignment="Top" Click="ExportBtn_Click" Content="Export"/>
-                <Button x:Name="PrefetchBtn" Margin="5,130,10,0" Height="55" VerticalAlignment="Top" Content="Prefetch"/>
-                <Button x:Name="ClearBtn" Margin="5,190,10,0" Height="55" VerticalAlignment="Top" Content="Clear Cache"/>
+                <Button x:Name="PrefetchBtn" Margin="5,130,10,0" Height="55" VerticalAlignment="Top" Click="PrefetchBtn_Click" Content="Prefetch"/>
+                <Button x:Name="ClearBtn" Margin="5,190,10,0" Height="55" VerticalAlignment="Top" Click="ClearBtn_Click" Content="Clear Cache"/>
             </Grid>
         </GroupBox>
     </Grid>

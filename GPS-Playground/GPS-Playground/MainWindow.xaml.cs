@@ -72,5 +72,53 @@ namespace GPS_Playground
         {
             MainMap.ShowExportDialog();
         }
+
+        private void PrefetchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RectLatLng area = MainMap.SelectedArea;
+            if (!area.IsEmpty)
+            {
+                for (int i = (int)MainMap.Zoom; i <= MainMap.MaxZoom; i++)
+                {
+                    MessageBoxResult res = MessageBox.Show("Ready ripp at Zoom = " + i + " ?", "GMap.NET", MessageBoxButton.YesNoCancel);
+
+                    if (res == MessageBoxResult.Yes)
+                    {
+                        TilePrefetcher obj = new TilePrefetcher();
+                        obj.Owner = this;
+                        obj.ShowCompleteMessage = true;
+                        obj.Start(area, i, MainMap.MapProvider, 100);
+                    }
+                    else if (res == MessageBoxResult.No)
+                    {
+                        continue;
+                    }
+                    else if (res == MessageBoxResult.Cancel)
+                    {
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select map area holding ALT", "GMap.NET", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+        }
+
+        private void ClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are You sure?", "Clear GMap.NET cache?", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
+            {
+                try
+                {
+                    MainMap.Manager.PrimaryCache.DeleteOlderThan(DateTime.Now, null);
+                    MessageBox.Show("Done. Cache is clear.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }

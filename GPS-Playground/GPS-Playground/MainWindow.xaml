@@ -4,8 +4,13 @@
         xmlns:src="clr-namespace:GPS_Playground.Source"
         Title="MainWindow" Height="550" Width="800">
     <Grid>
-        <GroupBox Name="mapgroup"  Header="gmap" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
-            <src:Map x:Name="MainMap" Zoom="13" MaxZoom="24" MinZoom="1" />
+        <GroupBox Name="mapgroup"  Header="Map" Margin="12,7,180,12" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
+            <src:Map x:Name="MainMap" Zoom="13" MaxZoom="20" MinZoom="5" />
+        </GroupBox>
+        <GroupBox HorizontalAlignment="Right" Margin="0,7,9.6,11.8" VerticalAlignment="Stretch" Header="Cache Options" Width="165">
+            <Grid>
+
+            </Grid>
         </GroupBox>
     </Grid>
 </Window>

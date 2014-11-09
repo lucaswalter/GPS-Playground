@@ -9,7 +9,10 @@
         </GroupBox>
         <GroupBox HorizontalAlignment="Right" Margin="0,7,9.6,11.8" VerticalAlignment="Stretch" Header="Cache Options" Width="165">
             <Grid>
-
+                <Button x:Name="ImportBtn" Margin="5,10,10,0" Height="55" VerticalAlignment="Top" Content="Import"/>
+                <Button x:Name="ExportBtn" Margin="5,70,10,0" Height="55" VerticalAlignment="Top" Content="Export"/>
+                <Button x:Name="PrefetchBtn" Margin="5,130,10,0" Height="55" VerticalAlignment="Top" Content="Prefetch"/>
+                <Button x:Name="ClearBtn" Margin="5,190,10,0" Height="55" VerticalAlignment="Top" Content="Clear Cache"/>
             </Grid>
         </GroupBox>
     </Grid>

@@ -132,5 +132,10 @@ namespace GPS_Playground
                 }
             }
         }
+
+        private void AddWaypointBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PlaceMarker(Double.Parse(LatitudeTextBox.Text), Double.Parse(LongitudeTextBox.Text));
+        }
     }
 }

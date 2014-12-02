@@ -18,7 +18,7 @@
         </GroupBox>
 
         <GroupBox HorizontalAlignment="Right" Margin="0,288,9.6,11.8" VerticalAlignment="Stretch" Header="Manage Waypoints" Width="165">
-            <Grid>
+            <Grid Margin="-6,0,-13,0.4">
                 <Label Content="Longitude:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 <Label Content="Latitude:"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,26,0,0"/>
 
@@ -26,7 +26,6 @@
                 <TextBox x:Name="LatitudeTextBox" HorizontalAlignment="Right" VerticalAlignment="Top" Width="65" Margin="0,32,9,0" Height="20"/>
 
                 <Button x:Name="AddWayPointButton" Height="40" VerticalAlignment="Top" Content="Add Waypoint" Margin="6,58,10,0"/>
-                
             </Grid>
         </GroupBox>
     </Grid>

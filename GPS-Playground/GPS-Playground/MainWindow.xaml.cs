@@ -32,7 +32,7 @@ namespace GPS_Playground
             // Set Marker
             currentMarker = new GMapMarker(MainMap.Position);
             {
-                currentMarker.Shape = new CustomMarkerRed(this, currentMarker, "Baller Rolla Marker");
+                currentMarker.Shape = new CustomMarkerRed(this, currentMarker, "Rolla Marker");
                 currentMarker.Offset = new System.Windows.Point(-15, -15);
                 currentMarker.ZIndex = int.MaxValue;
                 MainMap.Markers.Add(currentMarker);
@@ -63,6 +63,7 @@ namespace GPS_Playground
             return pingStatus;
         }
 
+        // TODO: CREATE FORMAT CONVERTER FOR NORMAL COORDINATES
         public void PlaceMarker(double latitude, double longitude)
         {
             PointLatLng tempPosition = new PointLatLng(latitude, longitude);

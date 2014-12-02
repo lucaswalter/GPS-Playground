@@ -63,6 +63,18 @@ namespace GPS_Playground
             return pingStatus;
         }
 
+        public void PlaceMarker(double latitude, double longitude)
+        {
+            PointLatLng tempPosition = new PointLatLng(latitude, longitude);
+            GMapMarker tempMarker = new GMapMarker(tempPosition);
+
+            // Set Position On Map
+            tempMarker.Shape = new CustomMarkerRed(this, tempMarker, "Marker");
+            tempMarker.Offset = new System.Windows.Point(-15, -15);
+            tempMarker.ZIndex = int.MaxValue;
+            MainMap.Markers.Add(tempMarker);
+        }
+
         private void ImportBtn_Click(object sender, RoutedEventArgs e)
         {
             MainMap.ShowImportDialog();
